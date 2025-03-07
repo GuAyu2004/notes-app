@@ -10,13 +10,16 @@ import { AppService } from './app.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5433,
-      username: 'postgres',
-      password: 'Ayushi.01',
-      database: 'jo',
+      host: 'dpg-cv58h08gph6c73ap5cj0-a.oregon-postgres.render.com', // Extracted from your URL
+      port: 5432, // Default PostgreSQL port
+      username: 'db_78sl_user', // Extracted from your URL
+      password: 'M39cjMLsP7pewUk88ufMY0xz7ekUj4qy', // Extracted from your URL
+      database: 'db_78sl', // Extracted from your URL
       autoLoadEntities: true,
-      synchronize: true, // Automatically sync schema (disable in production)
+      synchronize: true, // Set to false in production
+      ssl: {
+        rejectUnauthorized: false,}
+        
     }),
     AuthModule,
     UsersModule,
