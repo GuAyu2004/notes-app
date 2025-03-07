@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    width: 300px;
+    margin: auto;
+}
+input, textarea, button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+}
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+}
