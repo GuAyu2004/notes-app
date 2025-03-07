@@ -8,8 +8,9 @@ async function bootstrap() {
 
   // Serve static files from the "public" folder
   app.use(express.static(join(__dirname, '..', 'front')));
+  
 
   app.enableCors(); // Allow frontend requests
-  await app.listen(3000);
+  await app.listen(3900);
 }
 bootstrap();

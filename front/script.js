@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3900";
 
 async function signup() {
     const email = document.getElementById("email").value;
@@ -47,7 +47,7 @@ async function createNote() {
         return;
     }
 
-    const res = await fetch("http://localhost:3000/notes", {
+    const res = await fetch("http://localhost:3900/notes", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
