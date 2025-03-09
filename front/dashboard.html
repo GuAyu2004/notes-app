@@ -3,14 +3,119 @@
 <head>
     <title>Dashboard</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .add-note-btn {
+            background-color: #007BFF;
+            color: white;
+        }
+        .logout-btn {
+            background-color: #FF5733;
+            color: white;
+        }
+        #notes-container {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .note {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .note h3 {
+            margin: 0;
+            color: #333;
+        }
+        .note p {
+            color: #666;
+            flex-grow: 1;
+        }
+        .delete-btn {
+            background-color: #DC3545;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            align-self: flex-end;
+            transition: background 0.3s;
+        }
+        .delete-btn:hover {
+            background-color: #C82333;
+        }
+        @media (max-width: 600px) {
+            .container, #notes-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body onload="fetchNotes()">
-    <h1>Welcome, <span id="user-email"></span></h1> <!-- Display user email here -->
-    <input id="title" placeholder="Title">
-    <textarea id="content"></textarea>
-    <button onclick="createNote()">Add Note</button>
-    <button onclick="logout()">Logout</button>
-    <div id="notes-container"></div>
+    <div class="container">
+        <h1>Welcome, <span id="user-email"></span></h1> <!-- Display user email here -->
+        <input id="title" placeholder="Title">
+        <textarea id="content"></textarea>
+        <button class="add-note-btn" onclick="createNote()">Add Note</button>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+        <div id="notes-container"></div>
+    </div>
 
     <script>
         // Display the user's email on the dashboard
@@ -19,6 +124,8 @@
         } else {
             window.location.href = "index.html"; // Redirect to login if no email is found
         }
+
+        
     </script>
 </body>
 </html>

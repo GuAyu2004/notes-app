@@ -20,11 +20,10 @@ export class NotesService {
     return await this.notesRepo.save(newNote);
   }
 
-  // Fetch notes by userId
   async findAll(userId: number) {
-  return await this.notesRepo.find({
-    where: { user: { id: userId } },
-  });
+    return await this.notesRepo.find({
+        where: { user: { id: userId } }, // ✅ Ensure it fetches only notes belonging to the logged-in user
+    });
 }
 
 

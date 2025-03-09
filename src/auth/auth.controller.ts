@@ -18,6 +18,14 @@ export class AuthController {
   async login(@Body() body: { email: string; password: string }) {
     const { email, password } = body;
     const access_token = await this.authService.login(email, password);
-    return { message: 'Login successful', access_token };
+    console.log(access_token)
+    // return { message: 'Login successfuuul', access_token, email };
+    return { 
+      message: 'Login successful', 
+      email,  // Add email here
+      access_token 
+  };
   }
+  
+  
 }

@@ -29,6 +29,8 @@ async function login() {
 
     const data = await res.json();
     localStorage.setItem("token", data.access_token); // Store JWT
+    console.log("popo")
+    console.log(data);
     localStorage.setItem("email", data.email); // Store email in localStorage
     
     alert(data.message); // Show login success message
@@ -64,6 +66,10 @@ async function createNote() {
     } else {
         alert("✅ Note added successfully!");
     }
+    // title.value = "";
+    // content.value = "";
+    document.getElementById("title").value = ""
+    document.getElementById("content").value = ""
 }
 
 
